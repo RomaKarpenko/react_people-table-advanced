@@ -5,7 +5,6 @@ import { PeopleFilters } from '../peopelefilter';
 import { getPeople } from '../../api';
 import { Person } from '../../types';
 import { useSearchParams } from 'react-router-dom';
-// import { Outlet } from 'react-router-dom';
 
 export const PeoplePage = () => {
   const [isLoading, setIsLoading] = useState(false);
