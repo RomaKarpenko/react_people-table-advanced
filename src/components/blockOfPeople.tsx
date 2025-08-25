@@ -28,7 +28,7 @@ export const BlockOfPeople: React.FC<Props> = ({
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   return (
-    <div className="block">
+    <div className="column">
       <div className="box table-container">
         {isError && (
           <>
@@ -79,7 +79,7 @@ export const BlockOfPeople: React.FC<Props> = ({
                 <th>
                   Sex
                   <a
-                    href="#/people?sort=name"
+                    href="#/people?sort=sex"
                     onClick={e => {
                       e.preventDefault();
 
@@ -92,7 +92,15 @@ export const BlockOfPeople: React.FC<Props> = ({
                     }}
                   >
                     <span className="icon">
-                      <i className="fas fa-sort" />
+                      {sortBy === 'sex' ? (
+                        sortOrder === 'asc' ? (
+                          <i className="fas fa-sort-up" />
+                        ) : (
+                          <i className="fas fa-sort-down" />
+                        )
+                      ) : (
+                        <i className="fas fa-sort" />
+                      )}
                     </span>
                   </a>
                 </th>
@@ -112,7 +120,15 @@ export const BlockOfPeople: React.FC<Props> = ({
                     }}
                   >
                     <span className="icon">
-                      <i className="fas fa-sort" />
+                      {sortBy === 'born' ? (
+                        sortOrder === 'asc' ? (
+                          <i className="fas fa-sort-up" />
+                        ) : (
+                          <i className="fas fa-sort-down" />
+                        )
+                      ) : (
+                        <i className="fas fa-sort" />
+                      )}
                     </span>
                   </a>
                 </th>
@@ -132,7 +148,15 @@ export const BlockOfPeople: React.FC<Props> = ({
                     }}
                   >
                     <span className="icon">
-                      <i className="fas fa-sort" />
+                      {sortBy === 'died' ? (
+                        sortOrder === 'asc' ? (
+                          <i className="fas fa-sort-up" />
+                        ) : (
+                          <i className="fas fa-sort-down" />
+                        )
+                      ) : (
+                        <i className="fas fa-sort" />
+                      )}
                     </span>
                   </a>
                 </th>
